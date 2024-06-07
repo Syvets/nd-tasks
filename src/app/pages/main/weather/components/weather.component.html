@@ -11,7 +11,7 @@
               <mat-form-field>
                 <mat-label>Select</mat-label>
                 <mat-select>
-                  @for (capital of capitals; track capital) {
+                  @for (capital of capitals; track $index) {
                     <mat-option
                       (click)="getWeather(capital)"
                       [value]="capital"
