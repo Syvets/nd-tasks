@@ -8,10 +8,10 @@ import { Weather } from '../models/weather.interface';
   providedIn: 'root',
 })
 export class WeatherService {
-  private apiUrl =
+  private readonly apiUrl =
     'http://api.weatherapi.com/v1/current.json?key=0c5f0241fe5347db92b113221240506&q=';
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   getWeather(city: string): Observable<Weather> {
     return this.http.get<WeatherRequest>(`${this.apiUrl}${city}/posts`).pipe(
